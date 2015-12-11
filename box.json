@@ -1,0 +1,34 @@
+{
+    "name":"JsonWebToken-cfc",
+    "version":"1.0.0",
+    "author":"Henry Ho",
+    "homepage":"https://github.com/henrylearn2rock/JsonWebToken-cfc",
+    "documentation":"https://github.com/henrylearn2rock/JsonWebToken-cfc/blob/master/README.md",
+    "repository":{
+        "type":"GIT",
+        "URL":"https://github.com/henrylearn2rock/JsonWebToken-cfc.git"
+    },
+    "bugs":"https://github.com/henrylearn2rock/JsonWebToken-cfc/issues",
+    "slug":"JsonWebToken-cfc",
+    "shortDescription":"JSON Web Token",
+    "description":"A very basic JSON Web Token (http://jwt.io/) implemented for ColdFusion 10+",
+    "type":"project",
+    "projectURL":"https://github.com/henrylearn2rock/JsonWebToken-cfc",
+    "license":[
+        {
+            "type":"MIT"
+        }
+    ],
+    "dependencies":{
+    },
+    "devDependencies":{
+        "testbox":"2.2.0"
+    },
+    "ignore":[
+        "LICENSE",
+        "*.md"
+    ],
+    "testbox":{
+        "runner":""
+    }
+}
