@@ -21,7 +21,7 @@ component displayname="JSON Web Token" accessors="true"
 	/** @jwt JSON Web Token string */
 	function init(string jwt='') 
 	{
-		if (len(jwt))
+		if (len(jwt) && listLen(jwt, '.') == 3)
 		{
 			var parts = listToArray(jwt, '.');
 			setHeader(parts[1]);
@@ -86,8 +86,9 @@ component displayname="JSON Web Token" accessors="true"
 
 	private string function decodeBase64Url(required string input) 
 	{
-		var base64Url = replaceList(input, "-,_", "+,/");
-		var binary = binaryDecode(base64Url, "base64");
+		var base64 = replaceList(input, "-,_", "+,/")
+						& repeatString('=', 4 - len(input) % 4);	// add '=' padding for CF's liking
+		var binary = binaryDecode(base64, "base64");
 		var utf8 = charsetEncode(binary, "utf-8");
 		
 		return utf8;
